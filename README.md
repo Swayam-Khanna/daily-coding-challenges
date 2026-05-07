@@ -6,9 +6,7 @@
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
 </p>
 
-<p align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" width="120" alt="coding" />
-</p>
+
 
 # **About This Repository**
 
@@ -85,17 +83,7 @@ Each solution file contains:
 
 ---
 
-# **Progress Tracker**
 
-| Topic               | Problems Solved |
-| ------------------- | --------------- |
-| Arrays              | 0               |
-| Strings             | 0               |
-| Trees               | 0               |
-| Graphs              | 0               |
-| Dynamic Programming | 0               |
-
-> Progress will be updated regularly.
 
 ---
 
