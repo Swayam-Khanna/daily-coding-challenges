@@ -1,0 +1,66 @@
+class Solution {
+    public int[][] rotateGrid(int[][] grid, int k) {
+        int m=grid.length,n=grid[0].length;
+        int r1=0,r2=m-1,c1=0,c2=n-1;
+        while(r1<r2 && c1<c2){
+            int total=(r2-r1)*2+(c2-c1)*2;
+            int[] arr=new int[total];
+            int shift=k%total;
+            int index=0;
+            //top
+            for(int j=c1;j<c2;j++){
+                arr[index++]=grid[r1][j];
+            }
+            //right
+            for(int i=r1;i<r2;i++){
+                arr[index++]=grid[i][c2];
+            }
+            //bottom
+            for(int j=c2;j>c1;j--){
+                arr[index++]=grid[r2][j];
+            }
+            //left
+            for(int i=r2;i>r1;i--){
+                arr[index++]=grid[i][c1];
+            }
+            reverse(arr,0,shift-1);
+            reverse(arr,shift,total-1);
+            reverse(arr,0,total-1);
+            index=0;
+            //top
+            for(int j=c1;j<c2;j++){
+                grid[r1][j]=arr[index];
+                index++;
+            }
+            //right
+            for(int i=r1;i<r2;i++){
+                grid[i][c2]=arr[index];
+                index++;
+            }
+            //bottom
+            for(int j=c2;j>c1;j--){
+                grid[r2][j]=arr[index];
+                index++;
+            }
+            //left
+            for(int i=r2;i>r1;i--){
+                grid[i][c1]=arr[index];
+                index++;
+            }
+            r1++;
+            r2--;
+            c1++;
+            c2--;
+        }
+        return grid;
+    }
+    public void reverse(int[] arr,int l,int r){
+        while(l<r){
+            int temp=arr[l];
+            arr[l]=arr[r];
+            arr[r]=temp;
+            l++;
+            r--;
+        }
+    }
+}
